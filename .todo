@@ -1,10 +1,4 @@
- - [BUG] Accordion details alwasy opened
- - define which info display on cards
- - buy request and save data via context
- - show wallet with actives
- - fake payment loading (maybe?)
- - payment tab (v2?)
+ - payment tab (v2)
  - UI mobile adjusments
-
 
  - show transactions (v2)
