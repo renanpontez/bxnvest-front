@@ -54,10 +54,10 @@ const CardListCrypto = ({ itemsList }) => {
                   <AccordionDetails>
                     <Box py={2} width={"100%"}>
                       <CardListDetails items={[
-                        { label: "Day low", value: item.regularMarketDayLow.toFixed(2) },
-                        { label: "Day high", value: item.regularMarketDayHigh.toFixed(2) },
+                        { label: "Day low", value: '$ ' + item.regularMarketDayLow.toFixed(2) },
+                        { label: "Day high", value: '$ ' + item.regularMarketDayHigh.toFixed(2) },
                         { label: "Market change (%)", value: item.regularMarketChangePercent.toFixed(2) },
-                        { label: "Price", value: item.regularMarketPrice.toFixed(2) },
+                        { label: "Price", value: '$ ' + item.regularMarketPrice.toFixed(2) },
                       ]} />
 
                       <Box>

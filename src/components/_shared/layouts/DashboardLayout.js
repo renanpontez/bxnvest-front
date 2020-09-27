@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Box, IconButton, makeStyles, Paper } from "@material-ui/core";
 import PersonIcon from "@material-ui/icons/Person";
+import logoSymbolUrl from "./logo_symbol.png";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   layoutRoot: {
@@ -53,9 +55,11 @@ const DashboardLayout = ({ children }) => {
   return (
     <Box className={classes.layoutRoot}>
       <Box className={"sidebar"}>
-        <IconButton aria-label="delete">
-          <PersonIcon />
-        </IconButton>
+        <Link to={"/"}>
+          <IconButton>
+            <img src={logoSymbolUrl} width={30} />
+          </IconButton>
+        </Link>
       </Box>
       <Paper elevation={10} className={"main-container"}>{children}</Paper>
     </Box>

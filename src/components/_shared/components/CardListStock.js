@@ -85,7 +85,7 @@ const CardListStock = ({ itemsList }) => {
                       />
 
                       <Grid container>
-                        <Grid item xs={4} md={3}>
+                        <Grid item sm={6} md={3}>
                           <Box>
                             {amount / item.last > 1 && (
                               <Box className={classes.quantityStock}>
@@ -118,7 +118,7 @@ const CardListStock = ({ itemsList }) => {
                             )}
                           </Box>
                         </Grid>
-                        <Grid item xs={8} md={9}>
+                        <Grid item sm={6} md={9}>
                           <Button
                             variant={"contained"}
                             color={"primary"}
@@ -128,7 +128,7 @@ const CardListStock = ({ itemsList }) => {
                             size={"small"}
                             onClick={() => buyInvestment(item, amount, STOCK, quantityStock,)}
                           >
-                            INVEST $ {(quantityStock * item.last).toFixed(2)} NOW <MonetizationOnIcon />
+                            BUY $ {(quantityStock * item.last).toFixed(2)}
                           </Button>
                         </Grid>
                       </Grid>
