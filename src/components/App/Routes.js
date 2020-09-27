@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Switch } from "react-router-dom";
 import AppRoute from "./AppRoute";
-import uuid from "uuid/v4";
 import { useCookies } from "react-cookie";
 
 import EmptyLayout from "../_shared/layouts/EmptyLayout";
@@ -19,22 +18,6 @@ const InvestmentsResultsComponent = React.lazy(() =>
 );
 
 const Routes = (props) => {
-  const [cookies, setCookie] = useCookies(["user-uuid"]);
-
-  React.useEffect(() => {
-    //handle user Uuid
-    handleUserUuid();
-  }, []);
-
-  const handleUserUuid = () => {
-    if (!cookies["user-uuid"]) {
-      setCookie("user-uuid", uuid(), {
-        maxAge: 2147483647,
-        path: "/",
-      });
-    }
-  };
-
   return (
     <React.Suspense fallback={<div>Loading...</div>}>
       <Switch>
@@ -42,13 +25,11 @@ const Routes = (props) => {
           path={"/app"}
           layout={DashboardLayout}
           component={DashboardComponent}
-          cookies={props.cookies}
         />
         <AppRoute
           path={"/"}
           layout={EmptyLayout}
           component={HomepageComponent}
-          cookies={props.cookies}
         />
       </Switch>
     </React.Suspense>
