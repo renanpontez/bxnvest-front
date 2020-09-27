@@ -1,0 +1,45 @@
+import webpack from 'webpack';
+import Jarvis from 'webpack-jarvis';
+import Dotenv  from 'dotenv-webpack';
+
+import paths from './paths';
+
+module.exports = {
+    mode: 'development',
+    output: {
+        path: paths.outputPath,
+        filename: 'assets/js/[name]-bundle.js',
+        chunkFilename: '[name].js',
+		publicPath: '/',
+    },
+    performance: {
+        hints: 'warning',
+        maxAssetSize: 20000000,
+        maxEntrypointSize: 8500000,
+        assetFilter: assetFilename => {
+            return (
+                assetFilename.endsWith('.css') || assetFilename.endsWith('.js')
+            );
+        }
+    },
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        }
+    },
+    devServer: {
+        contentBase: paths.outputPath,
+        compress: true,
+        hot: true,
+        historyApiFallback: true
+    },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new Jarvis({
+            port: 1337
+        }),
+        new Dotenv({
+			path: './.env.development'
+		}),
+    ]
+};

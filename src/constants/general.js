@@ -1,0 +1,2 @@
+export const CRYPTOCURRENCY = "CRYPTOOPTION";
+export const STOCK = "STOCKOPTION";

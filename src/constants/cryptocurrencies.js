@@ -1,0 +1,1 @@
+export const CRYPTO_SYMBOLS = ['BTC', 'ETH', 'USDT', 'XRP', 'BCH', 'BNB'];
