@@ -80,7 +80,7 @@ const WalletComponent = ({ wallet, walletData }) => {
       <Box py={3}>
         <Grid container spacing={2}>
           {mainWalletData.map((eachAsset, i) => (
-            <Grid item xs={4}>
+            <Grid item xs={12} sm={6} md={4}>
               <Card className={classes.card} component={Box}>
                 <CardContent>
                   <Grid container>

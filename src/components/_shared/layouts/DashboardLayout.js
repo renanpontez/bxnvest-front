@@ -41,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
         left: 0,
         borderTopLeftRadius: 0,
         borderBottomLeftRadius: 0,
+        padding: theme.spacing(2),
       }
     },
   },

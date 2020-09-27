@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid } from "@material-ui/core";
+import { Box, Grid, Typography } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 import StyledCard from "../../_shared/components/StyledCard";
 import FindInvestmentComponent from "../investment/FindInvestmentComponent";
@@ -153,7 +153,9 @@ const HomepageComponent = (props) => {
           <Grid item xs={12} md={4}>
             <Box mb={2}>
               <StyledCard elevation={1} title={"Actual balance"}>
-                $ {actualBalance}
+								<Typography variant={"h3"}>
+                	$ {actualBalance}
+								</Typography>
               </StyledCard>
             </Box>
 

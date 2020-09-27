@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Box, Grid, Grow, IconButton, makeStyles, Slide, Typography } from "@material-ui/core";
+import { Box, Grid, Grow, Hidden, IconButton, makeStyles, Slide, Typography } from "@material-ui/core";
 import { useHistory, withRouter } from "react-router-dom";
 import { getCryptos } from "../../../services/cryptosService";
 import StyledCard from "../../_shared/components/StyledCard";
@@ -21,7 +21,8 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     height: '100vh',
     padding: theme.spacing(4),
-    backgroundColor: theme.palette.background.default
+    backgroundColor: theme.palette.background.default,
+    overflowY: 'auto'
   }
 }));
 
@@ -49,15 +50,17 @@ const InvestmentsResultsComponent = ({
       <InvestmentsResultsContext.Provider value={{ amount: resultsData.amount }}>
         <Slide in={true} direction={"up"}>
           <Box>
-            <Box mb={5}>
+            <Box mb={5} textAlign={"center"}>
               <Grid container alignItems={"center"}>
-                <Grid item xs={12} md={5}>
-                  <Typography variant={"body2"}>
-                    home // investing // ${amount}
-                  </Typography>
+                <Grid item sm={12} md={5}>
+                  <Hidden smDown>
+                    <Typography variant={"body2"}>
+                      home // investing // ${amount}
+                    </Typography>
+                  </Hidden>
                 </Grid>
 
-                <Grid item xs={6} md={2}>
+                <Grid item sm={12} md={4}>
                   <Box textAlign={"center"}>
                     <Typography variant={"h3"}>
                       Finding the best invesment
@@ -68,8 +71,6 @@ const InvestmentsResultsComponent = ({
                     </Typography>
                   </Box>
                 </Grid>
-
-                <Grid item xs={6} md={5}></Grid>
               </Grid>
             </Box>
             <Grid container spacing={2}>

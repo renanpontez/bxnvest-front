@@ -14,7 +14,7 @@ import { getCryptos } from "../../../services/cryptosService";
 const useStyles = makeStyles((theme) => ({
   amountModal: {
     [theme.breakpoints.down("sm")]: {
-      left: 40,
+      left: 20,
     },
   },
 }));
@@ -56,13 +56,14 @@ const FindInvestmentComponent = ({ setResultsData }) => {
     <>
       <Slide in={isModalOpened} direction={"up"}>
         <Box
-          bottom={40}
-          right={40}
+          bottom={20}
+          right={20}
           position={"fixed"}
           zIndex={2}
           className={classes.amountModal}
         >
           <StyledCard
+            elevation={15}
             title={"How much do you want to invest?"}
             subtitle={
               "We are going to choose the best options according to the amount you choose to invest."
