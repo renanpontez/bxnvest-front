@@ -7,7 +7,6 @@ const AppRoute = (props) => {
 
   return (
     <Route
-      strict
       exact
       {...rest}
       render={(props) => (

@@ -1,6 +1,5 @@
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
-import { withCookies } from "react-cookie";
+import { BrowserRouter, HashRouter } from "react-router-dom";
 import Routes from "./Routes";
 import { ThemeProvider, Box, makeStyles } from "@material-ui/core";
 import { mainTheme } from "../_shared/theme/main";
@@ -18,12 +17,12 @@ const App = (props) => {
   return (
     <Box className={classes.root}>
       <ThemeProvider theme={mainTheme}>
-        <BrowserRouter>
-          <Routes cookies={props.cookies} />
-        </BrowserRouter>
+        <HashRouter basename='/'>
+          <Routes />
+        </HashRouter>
       </ThemeProvider>
     </Box>
   );
 };
 
-export default withCookies(App);
+export default App;

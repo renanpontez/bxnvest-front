@@ -17,10 +17,10 @@ const InvestmentsResultsComponent = React.lazy(() =>
   import("../pages/investment/InvestmentsResultsComponent")
 );
 
-const Routes = (props) => {
+const Routes = () => {
   return (
     <React.Suspense fallback={<div>Loading...</div>}>
-      <Switch>
+      <Switch>  
         <AppRoute
           path={"/app"}
           layout={DashboardLayout}
